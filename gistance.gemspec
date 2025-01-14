@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.test_files = Dir.glob('spec/**/*')
 
-  gem.add_dependency 'faraday', '~>0.9.1'
+  gem.add_dependency 'faraday', '~>2.12'
   gem.add_dependency 'faraday_middleware', '~> 0.9.1'
   gem.add_dependency 'hashie', '~>2.0.5'
   gem.add_dependency 'json', '~>2.8.2'
