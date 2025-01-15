@@ -1,6 +1,5 @@
 require 'faraday'
-require 'faraday_mashify'
-require 'faraday-follow_redirects'
+require 'faraday-response-mashify'
 
 module Gistance
   # Faraday connection methods
