@@ -1,5 +1,6 @@
-require 'faraday_middleware'
-require 'gistance/response/raise_error'
+require 'faraday'
+require 'faraday_mashify'
+require 'faraday-follow_redirects'
 
 module Gistance
   # Faraday connection methods
@@ -13,13 +14,14 @@ module Gistance
       }
 
       connection = Faraday.new(options) do |conn|
-        conn.response(:mashify)
-        conn.response(:json, content_type: /\bjson$/)
 
-        conn.use(Gistance::Response::RaiseError)
-        conn.use(FaradayMiddleware::FollowRedirects, limit: 3)
+        conn.request :json
+        conn.response :json, content_type: /\bjson$/
 
-        conn.adapter(Faraday.default_adapter)
+        conn.use Gistance::Response::RaiseError
+        conn.use FaradayMiddleware::FollowRedirects, limit: 3
+
+        conn.adapter Faraday.default_adapter
       end
 
       connection
