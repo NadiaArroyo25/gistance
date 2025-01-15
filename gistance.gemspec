@@ -23,7 +23,6 @@ Gem::Specification.new do |gem|
   gem.test_files = Dir.glob('spec/**/*')
 
   gem.add_dependency 'faraday', '~>2.0'
-  gem.add_dependency 'faraday-response-mashify', '~> 1.0'
   gem.add_dependency 'hashie', '~>2.0.5'
   gem.add_dependency 'json', '~>2.8.2'
   gem.add_dependency 'multi_json', '~>1.11.0'

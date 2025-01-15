@@ -1,5 +1,4 @@
 require 'faraday'
-require 'faraday-response-mashify'
 
 module Gistance
   # Faraday connection methods
